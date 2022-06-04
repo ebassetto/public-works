@@ -1,0 +1,42 @@
+<form class="flex flex-col p-4" [formGroup]="cardForm">
+  <p>Add Credit Card</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Card Type</mat-label>
+    <mat-select formControlName="types">
+      <ng-container *ngFor="let type of types">
+        <mat-option class="capitalize" [value]="type">{{ type }}</mat-option>
+      </ng-container>
+    </mat-select>
+    <mat-error *ngIf="cardForm.get('types')?.hasError('required')"> Type is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <div class="flex">
+    <mat-form-field class="mr-2" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name">
+      <mat-error *ngIf="cardForm.get('name')?.hasError('required')"> Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input type="text" matInput formControlName="surname">
+      <mat-error *ngIf="cardForm.get('surname')?.hasError('required')"> Surname is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>N° Card</mat-label>
+    <input type="text" matInput formControlName="number">
+    <mat-error *ngIf="cardForm.get('number')?.hasError('required')"> N° Card is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Security Code</mat-label>
+    <input type="text" matInput formControlName="securityCode">
+    <mat-error *ngIf="cardForm.get('securityCode')?.hasError('required')"> Security Code is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addCard()">Add credit card</button>
+  <br>
+  <button mat-stroked-button (click)="closeAddCard($event)">Close</button>
+</form>

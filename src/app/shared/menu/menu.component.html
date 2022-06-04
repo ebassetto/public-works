@@ -1,0 +1,22 @@
+<mat-sidenav-container class="h-full">
+  <mat-sidenav #sidenav mode="side" opened="true" class="w-1/5">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <ng-container *ngFor="let route of routes">
+        <a mat-list-item [routerLink]="[route.link]" routerLinkActive="list-item-active">
+          <mat-icon matListIcon> {{ route.icon }} </mat-icon>
+          <span class="pl-2">{{ route.title }}</span>
+        </a>
+      </ng-container>
+    </mat-nav-list>
+    <mat-toolbar>
+      <mat-icon>person</mat-icon>
+      <span class="pl-4">Enrico Bassetto</span>
+      <button mat-button>Logout</button>
+    </mat-toolbar>
+  </mat-sidenav>
+  <mat-sidenav-content class="w-4/5">
+    <mat-toolbar color="primary">NgFintech</mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,40 @@
+@use "@angular/material" as mat;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@include mat.core();
+
+$fintech-light-primary: mat.define-palette(mat.$light-blue-palette);
+$fintech-light-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+$fintech-light-warn: mat.define-palette(mat.$red-palette);
+$fintech-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $fintech-light-primary,
+      accent: $fintech-light-accent,
+      warn: $fintech-light-warn,
+    ),
+  )
+);
+
+$fintech-dark-primary: mat.define-palette(mat.$deep-purple-palette);
+$fintech-dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$fintech-dark-warn: mat.define-palette(mat.$red-palette);
+$fintech-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $fintech-dark-primary,
+      accent: $fintech-dark-accent,
+      warn: $fintech-dark-warn,
+    ),
+  )
+);
+
+// Default
+@include mat.all-component-themes($fintech-light-theme);
+
+.custom-dark-theme {
+  @include mat.all-component-colors($fintech-dark-theme);
+}

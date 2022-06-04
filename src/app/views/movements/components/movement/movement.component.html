@@ -1,0 +1,13 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="text-gray-300 italic mr-2 text-sm">[{{ date }}]</span>
+            <span class="font-bold mr-2">{{ amount }}</span>
+            <span>{{ title }}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span class="text-gray-400">{{ description | truncate }}</span>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ description }}</p>
+</mat-expansion-panel>

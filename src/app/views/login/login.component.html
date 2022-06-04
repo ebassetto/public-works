@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center h-screen">
+  <mat-card>
+    <mat-card-content>
+      <ng-container *ngIf="isLogin; else elseBlock">
+        <ft-sign-in></ft-sign-in>
+      </ng-container>
+      <ng-template #elseBlock>
+        <ft-register></ft-register>
+      </ng-template>
+      <button (click)="changeForm()">
+        {{ isLogin ? 'Create new account' : 'Do you have an account? Login' }}
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

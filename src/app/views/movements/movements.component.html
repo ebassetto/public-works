@@ -1,0 +1,17 @@
+<!-- <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div> -->
+<mat-form-field appearance="fill">
+  <mat-label>Seleziona una carta</mat-label>
+  <mat-select>
+    <mat-option value="_id">2222222222</mat-option>
+  </mat-select>
+</mat-form-field>
+<h3>Saldo: {{ amount }}</h3>
+<mat-accordion multi>
+  <ng-container *ngFor="">
+    <ft-movement></ft-movement>
+  </ng-container>
+</mat-accordion>
+<button>Carica altro</button>

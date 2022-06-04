@@ -1,0 +1,10 @@
+<mat-drawer-container class="cards-container">
+  <mat-drawer #drawer mode="side" position="end">
+    <ft-card-form (closeCardEvent)="drawer.close()" (addCardEvent)="addCard($event)"></ft-card-form>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ft-card-list [cards]="cards$ | async" (openCardFormEvent)="drawer.open()" (deleteCardEvent)="deleteCard($event)"></ft-card-list>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+

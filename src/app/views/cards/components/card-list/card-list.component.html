@@ -1,0 +1,17 @@
+<div class="mx-4">
+  <mat-list>
+    <div mat-subheader>Cards</div>
+    <mat-list-item *ngFor="let card of cards">
+      <mat-icon mat-list-icon>credit_card</mat-icon>
+      <div mat-line>{{ card.number }}</div>
+      <div mat-line> {{ card.amount }} - {{ card.type }} </div>
+      <button mat-icon-button matTooltip="Vedi movimenti" (click)="goToCardMovements(card._id)">
+        <mat-icon>receipt_long</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Rimuovi" (click)="deleteCard(card._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <button mat-raised-button class="w-full" (click)="openCardForm($event)">Add</button>
+</div>
